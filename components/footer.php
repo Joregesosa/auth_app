@@ -6,13 +6,13 @@
                 <div class='flex  items-center py-1 gap-1'>
 
                     <span>created by </span>
-                    <span class='font-bold'>joregesosa</span>
+                    <a href='https://github.com/Joregesosa/authentication_app' class='font-bold'>joregesosa</a>
                     
                 </div>
 
-                <span>
+                <a href='https://devchallenges.io/challenges/N1fvBjQfhlkctmwj1tnw'>
                     devChallenges.io
-                </span>
+                </a >
             </footer>
     ";
 

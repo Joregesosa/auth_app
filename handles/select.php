@@ -10,9 +10,10 @@ if($_SERVER["REQUEST_METHOD"] ==="POST"){
     try {
 
         $stmt->execute([$email]); 
+
         $rowCounter = $stmt->rowCount();
+
         $user = $stmt->fetch(PDO::FETCH_ASSOC); 
- 
   
         if($rowCounter === 1){
 

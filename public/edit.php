@@ -2,6 +2,7 @@
     session_start();
 
     !$_SESSION['user'] && header("location: /authentication_app/public/login.php");
+    $photo = $_SESSION['user']['photo'];
   
 ?>
 
@@ -15,7 +16,10 @@
   </head>
 
   <body class="min-h-screen flex flex-col w-full bg-[#FAFAFB]">
+    
     <?php require_once "../components/header.php"?>
+    <?php require_once "../components/menu.php"?>
+    
 
     <div class="w-full max-w-[845px] mx-auto">
       <span>
@@ -44,42 +48,17 @@
           class="px-5 text-[#4F4F4F] text-[13px] flex flex-col max-w-[420px]"
         >
           <div class="mb-4 flex items-center gap-x-5">
-            <label for="photo" class="bg-slate-500 rounded-xl">
+            <label style="background-image: url(../handles/<?=$photo?>)" for="photo" class="bg-slate-500 rounded-xl bg-cover cursor-pointer">
+
               <span class="w-[72px] h-[72px] flex items-center justify-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="25"
-                  height="25"
-                  viewBox="0 0 25 25"
-                  fill="none"
-                >
-                  <g clip-path="url(#clip0_570_336)">
-                    <path
-                      d="M12.2156 15.5459C13.8724 15.5459 15.2156 14.2028 15.2156 12.5459C15.2156 10.889 13.8724 9.5459 12.2156 9.5459C10.5587 9.5459 9.21558 10.889 9.21558 12.5459C9.21558 14.2028 10.5587 15.5459 12.2156 15.5459Z"
-                      fill="white"
-                    />
-                    <path
-                      d="M20.2156 4.5459H17.0456L15.8056 3.1959C15.4356 2.7859 14.8956 2.5459 14.3356 2.5459H10.0956C9.53558 2.5459 8.99558 2.7859 8.61558 3.1959L7.38558 4.5459H4.21558C3.11558 4.5459 2.21558 5.4459 2.21558 6.5459V18.5459C2.21558 19.6459 3.11558 20.5459 4.21558 20.5459H20.2156C21.3156 20.5459 22.2156 19.6459 22.2156 18.5459V6.5459C22.2156 5.4459 21.3156 4.5459 20.2156 4.5459ZM12.2156 17.5459C9.45558 17.5459 7.21558 15.3059 7.21558 12.5459C7.21558 9.7859 9.45558 7.5459 12.2156 7.5459C14.9756 7.5459 17.2156 9.7859 17.2156 12.5459C17.2156 15.3059 14.9756 17.5459 12.2156 17.5459Z"
-                      fill="white"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_570_336">
-                      <rect
-                        width="24"
-                        height="24"
-                        fill="white"
-                        transform="translate(0.215576 0.545898)"
-                      />
-                    </clipPath>
-                  </defs>
-                </svg>
+                <img src='../public/icons/camera.svg' alt='Camera Icon'>
               </span>
+
             </label>
 
             <input type="file" name="photo" id="photo" class="hidden" />
 
-            <label for="photo">CHANGE PHOTO</label>
+            <label for="photo" class="hover:underline cursor-pointer">CHANGE PHOTO</label>
           </div>
 
           <label for="name"> Name </label>
@@ -100,7 +79,7 @@
             placeholder="Enter your bio..."
             class="resize-none h-24 bg-transparent border border-[#828282] rounded-xl focus:border-2 outline-none p-3 mb-2 font-medium text-base"
           >
-<?=$_SESSION['user']['bio']?></textarea
+        <?=$_SESSION['user']['bio']?></textarea
           >
 
           <label for="phone">Phone</label>

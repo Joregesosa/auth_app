@@ -1,8 +1,8 @@
 <?php
     session_start();
     !$_SESSION['user'] && header("location: /authentication_app/public/login.php");
-   
-  
+
+    $photo= $_SESSION['user']['photo']; 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,6 +17,7 @@
 <body class="min-h-screen flex flex-col w-full bg-[#FAFAFB]">
 
     <?php require_once "../components/header.php"?>
+    <?php require_once "../components/menu.php"?>
 
     <div class='bg-[#FAFAFB] flex flex-col w-full h-full md:w-4/5 md:max-w-4xl md:h-[640px] mx-auto'>
 
@@ -50,29 +51,32 @@
 
             <ul class='flex flex-col p-0'>
 
-                <li class='grid grid-cols-1/3 items-center p-3 border-b border-[#E0E0E0]'>
+                <li class='grid grid-cols-1/3 items-center py-4 px-5 border-b border-[#E0E0E0]'>
+
                     <span class='text-[#BDBDBD] text-[13px]'>
                         PHOTO
                     </span>
 
-                    <img src="<?= $_SESSION["user"]["photo"] ?>" alt='' class='w-[72px] h-[72px] justify-self-end md:justify-self-start mr-4'>
+                    <img src='../handles/<?=$photo?>' alt=''
+                        class='w-[72px] h-[72px] justify-self-end md:justify-self-start mr-4 rounded-lg'>
+
                 </li>
 
-                <li class='grid grid-cols-1/3 items-center px-5 border-b border-[#E0E0E0] py-6'>
+                <li class='grid grid-cols-1/3 items-center px-5 border-b border-[#E0E0E0] py-5'>
 
                     <span class='text-[#BDBDBD] text-[13px]'>NAME</span>
 
                     <p class='text-lg font-medium  text-right md:text-left'>
 
-                    <?= $_SESSION["user"]["name"] ?>
+                        <?= $_SESSION["user"]["name"] ?>
 
                     </p>
                 </li>
 
-                <li class='grid grid-cols-1/3 items-center px-5 border-b border-[#E0E0E0] py-6'>
+                <li class='grid grid-cols-1/3 items-center px-5 border-b border-[#E0E0E0] py-5'>
 
                     <span class='text-[#BDBDBD] text-[13px]'>
-                        
+
                         BIO
 
                     </span>
@@ -86,10 +90,10 @@
 
                 </li>
 
-                <li class='grid grid-cols-1/3 items-center px-5 border-b border-[#E0E0E0] py-6'>
+                <li class='grid grid-cols-1/3 items-center px-5 border-b border-[#E0E0E0] py-5'>
 
                     <span class='text-[#BDBDBD] text-[13px]'>
-                        
+
                         PHONE
 
                     </span>
@@ -103,7 +107,7 @@
 
                 </li>
 
-                <li class='grid grid-cols-1/3 items-center px-5 border-b border-[#E0E0E0] py-6'>
+                <li class='grid grid-cols-1/3 items-center px-5 border-b border-[#E0E0E0] py-5'>
 
                     <span class='text-[#BDBDBD] text-[13px]'>
                         EMAIL
@@ -114,7 +118,7 @@
                     </p>
                 </li>
 
-                <li class='grid grid-cols-1/3 items-center px-5 border-b border-[#E0E0E0] py-6'>
+                <li class='grid grid-cols-1/3 items-center px-5 border-b border-[#E0E0E0] py-5'>
 
                     <span class='text-[#BDBDBD] text-[13px]'>PASSWORD</span>
 
@@ -126,8 +130,10 @@
         </div>
 
         <?php require_once "../components/footer.php"?>
-        
+
     </div>
+
+    
 
 </body>
 
