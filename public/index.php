@@ -16,27 +16,27 @@
   <title>Login</title>
 </head>
 
-<body class="min-h-screen flex flex-col w-full bg-[#FAFAFB]">
+<body class="min-h-screen flex flex-col w-full bg-[#FAFAFB] dark:bg-[#252329] dark:text-[#E0E0E0] ">
   <div class="flex flex-col w-fit md:w-max m-auto">
     <div
-      class="bg-[#FAFAFB] p-5 flex flex-col w-full md:w-[480px] md:h-[640px] m-auto md:border md:border-[#BDBDBD] rounded-3xl justify-center mx-auto">
+      class="p-5 flex flex-col w-full md:w-[480px] md:h-[640px] m-auto md:border md:border-[#BDBDBD] rounded-3xl justify-center mx-auto">
       <div class="max-w-[356px] flex flex-col mx-auto">
         <span>
           <img src="../public/icons/devChallengMin.svg" alt="devChalleng icon" />
         </span>
 
-        <h2 class="text-[#333] font-semibold text-lg w-80 my-3">
+        <h2 class="text-[#333] font-semibold text-lg w-80 my-3 dark:text-[#E0E0E0]">
           Join thousands of learners from around the world
         </h2>
 
-        <p class="text-[#333] text-base font-normal my-3 w-96">
+        <p class="text-[#333] text-base font-normal my-3 w-96 dark:text-[#E0E0E0]">
           Master web development by making real-life projects. There are
           multiple paths for you to choose
         </p>
       </div>
 
       <form action="../handles/insert.php" method="POST" class="w-[356px] mx-auto">
-        <div class="bg-[#FAFAFB] w-full border border-[#BDBDBD] h-12 flex items-center rounded-xl my-4 max-w-[356px]">
+        <div class="w-full border border-[#BDBDBD] h-12 flex items-center rounded-xl my-4 max-w-[356px]">
           <span class="w-6 h-6 mx-3">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
               <g clip-path="url(#clip0_570_396)">
@@ -56,7 +56,7 @@
             class="bg-transparent font-normal text-base w-4/5 h-10 outline-none border-none" />
         </div>
 
-        <div class="bg-[#FAFAFB] w-full border border-[#BDBDBD] h-12 flex items-center rounded-xl my-4 max-w-[356px]">
+        <div class="w-full border border-[#BDBDBD] h-12 flex items-center rounded-xl my-4 max-w-[356px]">
           <span class="w-6 h-6 mx-3">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
               <g clip-path="url(#clip0_570_401)">

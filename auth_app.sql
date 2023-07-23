@@ -1,9 +1,15 @@
-CREATE TABLE users (
-    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(45), 
-    email VARCHAR(20) UNIQUE NOT NULL, 
-    phone VARCHAR(15), 
-    photo BLOB, 
-    pass VARCHAR(120)
+CREATE DATABASE auth_app;
 
-);
+CREATE TABLE `users` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `bio` tinytext,
+  `email` varchar(50) NOT NULL,
+  `phone` varchar(15) DEFAULT NULL,
+  `photo` varchar(50) DEFAULT NULL,
+  `pass` varchar(120) DEFAULT NULL,
+  `create_date` datetime DEFAULT CURRENT_TIMESTAMP,
+  `las_update` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`)
+)

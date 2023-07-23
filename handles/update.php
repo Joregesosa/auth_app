@@ -27,6 +27,9 @@ if($_SERVER["REQUEST_METHOD"] ==="POST"){
         extract($_POST);
         
         if($_FILES['photo']['tmp_name']){ 
+            $counter++;
+
+            $arrayElments++;
             
             $fileName = $_FILES['photo']['name'];
             
@@ -44,7 +47,6 @@ if($_SERVER["REQUEST_METHOD"] ==="POST"){
 
             array_push($queryValues, $route);
             
-            $counter++;
         }
 
         if(isset($name)){
@@ -57,23 +59,26 @@ if($_SERVER["REQUEST_METHOD"] ==="POST"){
         }
         
         if(isset($bio)){
+            
+             $counter++;
 
             $sql .= $counter !== $arrayElments? "`bio`=?, " : "`bio`=?"; 
 
             array_push($queryValues, $bio);
-
-            $counter++;
+           
         }
 
         if(isset($phone)){
+            
             $counter++; 
-
+            
             $sql .= $counter !== $arrayElments? "`phone`=?, " : "`phone`=?"; 
             
             array_push($queryValues, $phone);
         }
 
         if(isset($password)){
+
             $counter++; 
 
             $hash = password_hash($password, PASSWORD_DEFAULT);
@@ -84,8 +89,11 @@ if($_SERVER["REQUEST_METHOD"] ==="POST"){
         }
        
         $sql .= " WHERE `email`= '$email'";
+       
+        $sql .= " WHERE `email`= '$email'";
         
         echo "<br> $sql";
+        
     try {
        
       $stmt = $conn->prepare($sql);
